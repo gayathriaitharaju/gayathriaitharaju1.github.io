@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gayathri Aitharaju | Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pV6RlyE5TO1Z+tT/c2kLnnP3jPrGce+bRmHYyk8m1q0v93HTsj9Sw5OfV8SGjg8Fzt1s7F4VjhxQ8R6g3tkqHw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <h1>Gayathri Aitharaju</h1>
+      <p>Final Year CSE Student | AI & ML Specialization</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="section fade-in">
+      <h2>About Me</h2>
+      <p>
+        I’m a final-year B.Tech student specializing in Computer Science Engineering with a focus on Artificial Intelligence and Machine Learning at Malla Reddy College of Engineering and Technology. I’m passionate about building intelligent systems, exploring real-world AI applications, and developing efficient, scalable software solutions.
+      </p>
+    </section>
+
+    <section id="skills" class="section fade-in">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong> Python, Java, MySQL</li>
+        <li><strong>Web Technologies:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Coursework:</strong> Data Structures, Machine Learning, AI, DBMS, Computer Networks</li>
+      </ul>
+    </section>
+
+    <section id="certifications" class="section fade-in">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Certification 1 — <em>Issued by Organization</em> (Year)</li>
+        <li>Certification 2 — <em>Issued by Organization</em> (Year)</li>
+        <li>Certification 3 — <em>Issued by Organization</em> (Year)</li>
+        <!-- Add more certifications here -->
+      </ul>
+    </section>
+
+    <section id="projects" class="section fade-in">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Project Title 1</h3>
+          <p>Brief description about your first project goes here.</p>
+          <a href="#" target="_blank" class="btn">GitHub Link</a>
+          <a href="#" target="_blank" class="btn btn-light">Live Demo</a>
+        </div>
+        <div class="project-card">
+          <h3>Project Title 2</h3>
+          <p>Brief description about your second project goes here.</p>
+          <a href="#" target="_blank" class="btn">GitHub Link</a>
+          <a href="#" target="_blank" class="btn btn-light">Live Demo</a>
+        </div>
+        <!-- Add more project cards here as you complete more projects -->
+      </div>
+    </section>
+
+    <section id="contact" class="section fade-in">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>
+        Find me on: 
+        <a href="https://github.com/gayathriaitharaju" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+        <a href="https://linkedin.com/in/your-linkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope fa-lg"></i></a>
+      </p>
+      <a href="#" class="btn resume-btn" download>Download Resume</a>
+    </section>
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button id="topBtn" title="Go to top">↑</button>
+
+  <footer>
+    <p>© 2025 Gayathri Aitharaju</p>
+  </footer>
+
+  <script>
+    // Scroll to Top Button
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = function () {
+      topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    topBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
